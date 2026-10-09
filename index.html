@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zeta AI v43 - FIXED + 3X EARNING ON 💰🔥</title>
+<!-- MONETAG VERIFICATION 90d5540b448903a47b2725be4e1cbaab VERIFIED ✅ -->
+<meta name="monetag" content="90d5540b448903a47b2725be4e1cbaab">
+<script src="https://alwingulla.com/88/tag.min.js" data-zone="291745" async data-cfasync="false"></script>
+<script src="https://quge5.com/88/tag.min.js" data-zone="293154" async data-cfasync="false"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,sans-serif;background:#0a0a0a;color:#fff;height:100vh;display:flex;flex-direction:column;overflow:hidden}
+.topbar{padding:12px 16px;border-bottom:1px solid #222;display:flex;align-items:center;gap:12px;background:#111}
+.logo{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#8a2be2,#00ffff);display:flex;align-items:center;justify-content:center;font-weight:800}
+.btn{padding:8px 14px;border-radius:20px;border:1px solid #333;background:#1a1a1a;color:#fff;cursor:pointer;font-size:0.8rem}
+.content{flex:1;overflow-y:auto;padding:16px}
+.chat-box{max-width:900px;margin:0 auto;width:100%;display:flex;flex-direction:column;gap:12px}
+.msg{padding:14px 18px;border-radius:18px;max-width:85%;line-height:1.6;font-size:0.95rem;word-break:break-word}
+.user{background:#fff;color:#000;align-self:flex-end;border-bottom-right-radius:4px}
+.ai{background:#171717;border:1px solid #2a2a2a;align-self:flex-start;border-bottom-left-radius:4px}
+.input-area{padding:12px 14px;border-top:1px solid #222;display:flex;gap:8px;max-width:900px;margin:0 auto;width:100%;background:#0a0a0a}
+input.text{flex:1;background:#151515;border:1px solid #333;color:#fff;padding:12px 18px;border-radius:25px;outline:none}
+button.send{background:#fff;color:#000;border:none;padding:12px 22px;border-radius:25px;font-weight:700;cursor:pointer}
+.green{color:#0f0}
+.key-bar{padding:10px 14px;background:#0f1a0f;border-bottom:1px solid #1a3a1a;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.key-bar input{flex:1;min-width:200px;background:#000;border:1px solid #333;color:#0f0;font-family:monospace;padding:8px 12px;border-radius:8px;font-size:0.75rem}
+.key-bar button{padding:8px 14px;border-radius:8px;border:none;font-weight:800;cursor:pointer;background:#0f0;color:#000}
+</style>
+</head>
+<body>
+<div class="topbar">
+<div class="logo">Z</div>
+<div><div style="font-weight:800">Zeta AI v43 💰 FIXED + 3X EARNING ON</div><div style="font-size:0.6rem" class="green" id="modelStatus">Checking... ⏳ 90d5540b + 291745 + 293154 + 11992721 ACTIVE 🔥</div></div>
+<div style="margin-left:auto"><button class="btn" style="background:#0f0;color:#000;font-weight:800">💰 EARNING ON</button></div>
+</div>
+<div class="key-bar" id="keyBar">
+<input id="keyInput" value="AQ.Ab8RN6LOJT2fJTMHLMZUyOfmxgvXMEpY1">
+<button onclick="saveAndTest()" id="testBtn">Test & Save 🔥</button>
+<span style="font-size:0.7rem" class="green" id="keyStatus">Auto testing...</span>
+<a href="https://aistudio.google.com/app/apikey" target="_blank" style="font-size:0.6rem;color:#0af">Naya key banao</a>
+</div>
+<div class="content" id="content"><div class="chat-box" id="chatBox"><div class="msg ai" style="border-color:#0f0;background:#0a1a0a">
+<b>🔥 Zeta v43 - 3X EARNING + FIXED AI! 💰🔥</b><br><br>
+✅ Verification: 90d5540b448903a47b2725be4e1cbaab VERIFIED<br>
+✅ Zone 291745 ACTIVE<br>
+✅ Wise Multitag 293154 ACTIVE (Main) 🔥 - Lucky Spin + Bonus wala ad = Earning!<br>
+✅ Push Zone 11992721 ACTIVE (sw.js) 🔥<br><br>
+<b style="color:#0f0">Earning ON hai - Jo Lucky ad dikh raha hai wahi $ hai! 🚀</b><br><br>
+<span style="font-size:0.8rem">AI Fix: Ab 6 models try karega, Key fail fix! Upar Test & Save dabao</span><br><br>
+<span style="font-size:0.8rem;color:#0f0">5 ads ON: Popunder + Push + Vignette + In-Page + Interstitial</span>
+</div></div></div>
+<div class="input-area"><input class="text" id="userInput" placeholder="Kuch bhi pucho - Earning ON hai..." onkeydown="if(event.key==='Enter')sendChat()"><button class="send" onclick="sendChat()">Send 🚀</button></div>
+<div style="text-align:center;padding:6px;background:#111;border-top:1px solid #1a1a1a;font-size:0.6rem;color:#666">Monetag VERIFIED 90d5540b • Zones: 291745 • 293154 • 11992721 • EARNING ON 💰 | v43 FIXED</div>
+<script>
+let chatHistory=[];
+let WORKING_MODEL=localStorage.getItem('zeta_v43_model')||'gemini-2.0-flash';
+let GEMINI_KEY=localStorage.getItem('zeta_v43_key')||localStorage.getItem('zeta_v7_key')||'AQ.Ab8RN6LOJT2fJTMHLMZUyOfmxgvXMEpY1';
+const MODELS_TO_TRY=['gemini-2.0-flash','gemini-2.0-flash-001','gemini-2.0-flash-exp','gemini-1.5-flash-latest','gemini-1.5-flash','gemini-1.5-flash-002','gemini-1.5-pro'];
+document.getElementById('keyInput').value=GEMINI_KEY;
+async function saveAndTest(){
+  const k=document.getElementById('keyInput').value.trim();
+  const status=document.getElementById('keyStatus');
+  const btn=document.getElementById('testBtn');
+  if(!k||k.length<20){status.textContent='Key choti hai!';status.style.color='#f55';return;}
+  localStorage.setItem('zeta_v43_key',k);localStorage.setItem('zeta_v7_key',k);GEMINI_KEY=k;
+  status.textContent='Testing... 6 models...';status.style.color='#ff0';btn.textContent='Testing...';
+  for(let model of [WORKING_MODEL,...MODELS_TO_TRY]){
+    status.textContent='Trying '+model+'...';
+    try{
+      const res=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${k}`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:[{parts:[{text:'Hi'}]}]})});
+      const data=await res.json();
+      if(data.candidates){
+        WORKING_MODEL=model;localStorage.setItem('zeta_v43_model',model);
+        status.textContent='✓ WORKING! '+model+' 🔥';status.style.color='#0f0';
+        document.getElementById('modelStatus').textContent=model+' ACTIVE + Earning ON 🔥';
+        btn.textContent='✓ Active 🔥';
+        document.getElementById('chatBox').innerHTML+=`<div class="msg ai" style="border-color:#0f0">✅ KEY FIXED! Model: ${model}<br>Ab ChatGPT jaisa jawab ayega! 💰</div>`;
+        document.getElementById('content').scrollTop=999999;return;
+      }else if(data.error){
+        const msg=data.error.message||'';if(msg.includes('not found')||msg.includes('not supported')||msg.includes('no longer')) continue;
+        if(msg.includes('API key not valid')){status.textContent='✗ Key invalid - Naya banao';status.style.color='#f55';btn.textContent='Invalid';return;}
+      }
+    }catch(e){continue;}
+  }
+  status.textContent='✗ Sab fail - Naya key banao aistudio se';status.style.color='#f55';btn.textContent='Failed';
+}
+async function callGemini(p){
+ let sys='You are Zeta AI from Unnao, helpful like ChatGPT. Reply in same language as user, Hinglish if user uses Hinglish. Never say you are Gemini. Be accurate, friendly.';
+ let full=sys+'\nHistory:'+chatHistory.slice(-6).map(m=>m.role+': '+m.text).join('\n')+'\nUser:'+p;
+ let models=[WORKING_MODEL,...MODELS_TO_TRY.filter(m=>m!==WORKING_MODEL)];
+ for(let model of models){
+  try{
+   const r=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${GEMINI_KEY}`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:[{parts:[{text:full}]}],generationConfig:{temperature:0.8,maxOutputTokens:2500}})});
+   const d=await r.json();
+   if(d.error){if(d.error.message.includes('not found')||d.error.message.includes('not supported')||d.error.message.includes('no longer')) continue; throw new Error(d.error.message);}
+   if(d.candidates){WORKING_MODEL=model;localStorage.setItem('zeta_v43_model',model);document.getElementById('modelStatus').textContent=model+' ACTIVE + Earning ON 💰';return d.candidates[0].content.parts[0].text;}
+  }catch(e){if(e.message.includes('not found')||e.message.includes('not supported')) continue; throw e;}
+ }
+ throw new Error('Key fail - Upar Test & Save dabao ya naya key banao aistudio.google.com/app/apikey se');
+}
+async function sendChat(){
+ const i=document.getElementById('userInput');const t=i.value.trim();if(!t)return;
+ const b=document.getElementById('chatBox');b.innerHTML+=`<div class="msg user">${t.replace(/</g,'&lt;')}</div>`;i.value='';
+ const a=document.createElement('div');a.className='msg ai';a.textContent='⏳ Zeta soch raha hai...';b.appendChild(a);
+ document.getElementById('content').scrollTop=999999;chatHistory.push({role:'User',text:t});
+ try{if(!GEMINI_KEY){a.innerHTML='⚠️ Pehle upar key daal ke Test & Save dabao!';return;}const ans=await callGemini(t);a.innerHTML=ans.replace(/</g,'&lt;').replace(/\n/g,'<br>')+`<br><div style="font-size:0.6rem;color:#0a0;margin-top:6px">✓ ${WORKING_MODEL} • Earning ON 💰</div>`;chatHistory.push({role:'Zeta',text:ans});}catch(e){a.innerHTML=`❌ ${e.message}<br><br>Fix: <a href="https://aistudio.google.com/app/apikey" target="_blank" style="color:#0af">Naya key banao yaha se</a> → Paste → Test & Save`;}
+ document.getElementById('content').scrollTop=999999;
+}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').then(()=>console.log('SW 11992721 Active 💰')).catch(()=>{});}
+window.onload=()=>{if(GEMINI_KEY&&GEMINI_KEY.length>20){saveAndTest();}};
+</script>
+</body>
+</html>
