@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zeta AI v44 - AQ KEY FIXED</title>
+<meta name="monetag" content="90d5540b448903a47b2725be4e1cbaab">
+<script src="https://alwingulla.com/88/tag.min.js" data-zone="291745" async data-cfasync="false"></script>
+<script src="https://quge5.com/88/tag.min.js" data-zone="293154" async data-cfasync="false"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,sans-serif;background:#0a0a0a;color:#fff;height:100vh;display:flex;flex-direction:column;overflow:hidden}
+.topbar{padding:12px 16px;border-bottom:1px solid #222;display:flex;align-items:center;gap:12px;background:#111}
+.logo{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#8a2be2,#00ffff);display:flex;align-items:center;justify-content:center;font-weight:800}
+.content{flex:1;overflow-y:auto;padding:16px}
+.chat-box{max-width:900px;margin:0 auto;width:100%;display:flex;flex-direction:column;gap:12px}
+.msg{padding:14px 18px;border-radius:18px;max-width:85%;line-height:1.6;font-size:0.95rem;word-break:break-word}
+.user{background:#fff;color:#000;align-self:flex-end;border-bottom-right-radius:4px}
+.ai{background:#171717;border:1px solid #2a2a2a;align-self:flex-start;border-bottom-left-radius:4px}
+.input-area{padding:12px 14px;border-top:1px solid #222;display:flex;gap:8px;max-width:900px;margin:0 auto;width:100%;background:#0a0a0a}
+input.text{flex:1;background:#151515;border:1px solid #333;color:#fff;padding:12px 18px;border-radius:25px;outline:none}
+button.send{background:#fff;color:#000;border:none;padding:12px 22px;border-radius:25px;font-weight:700;cursor:pointer}
+.green{color:#0f0}
+.key-bar{padding:10px 14px;background:#0f1a0f;border-bottom:1px solid #1a3a1a;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.key-bar input{flex:1;min-width:200px;background:#000;border:1px solid #333;color:#0f0;font-family:monospace;padding:8px 12px;border-radius:8px;font-size:0.75rem}
+.key-bar button{padding:8px 14px;border-radius:8px;border:none;font-weight:800;cursor:pointer;background:#0f0;color:#000}
+</style>
+</head>
+<body>
+<div class="topbar">
+<div class="logo">Z</div>
+<div><div style="font-weight:800">Zeta AI v44 AQ FIXED</div><div style="font-size:0.6rem" class="green" id="modelStatus">v44 AQ Fixed - Checking...</div></div>
+<div style="margin-left:auto"><button style="padding:8px 14px;border-radius:20px;background:#0f0;color:#000;font-weight:800;border:none">EARNING ON</button></div>
+</div>
+<div class="key-bar"><input id="keyInput" placeholder="AQ... wali key paste karo"><button onclick="saveAndTest()" id="testBtn">Test & Save</button><span id="keyStatus" class="green" style="font-size:0.7rem">AQ support ON</span></div>
+<div class="content" id="content"><div class="chat-box" id="chatBox"><div class="msg ai" style="border-color:#0f0;background:#0a1a0a"><b>Zeta v44 - AQ KEY FIXED!</b><br><br>Upar AQ wali key paste karke Test & Save dabao - Ab x-goog-api-key header se chalegi! Old AIza bhi chalegi.<br><br>Earning ON - Lucky ad = $</div></div></div>
+<div class="input-area"><input class="text" id="userInput" placeholder="Hii likho..." onkeydown="if(event.key==='Enter')sendChat()"><button class="send" onclick="sendChat()">Send</button></div>
+<script>
+let chatHistory=[];let WORKING_MODEL=localStorage.getItem('zeta_v44_model')||'gemini-2.0-flash';let GEMINI_KEY=localStorage.getItem('zeta_v44_key')||localStorage.getItem('zeta_v43_key')||localStorage.getItem('zeta_v7_key')||'';const MODELS=['gemini-2.0-flash','gemini-1.5-flash-latest','gemini-1.5-flash','gemini-1.5-pro'];document.getElementById('keyInput').value=GEMINI_KEY;
+async function tryModel(k,m){const b=JSON.stringify({contents:[{parts:[{text:'Hi'}]}]});try{let r=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${m}:generateContent`,{method:'POST',headers:{'Content-Type':'application/json','x-goog-api-key':k},body:b});let d=await r.json();if(d.candidates)return {ok:true,model:m};}catch(e){}try{let r2=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${m}:generateContent?key=${k}`,{method:'POST',headers:{'Content-Type':'application/json'},body:b});let d2=await r2.json();if(d2.candidates)return {ok:true,model:m};if(d2.error&&d2.error.message.includes('API key'))return {ok:false,fatal:true,msg:d2.error.message};}catch(e){}return {ok:false};}
+async function saveAndTest(){let k=document.getElementById('keyInput').value.trim();let s=document.getElementById('keyStatus');let btn=document.getElementById('testBtn');if(k.length<20){s.textContent='Choti key';return;}localStorage.setItem('zeta_v44_key',k);localStorage.setItem('zeta_v43_key',k);GEMINI_KEY=k;s.textContent='Testing...';s.style.color='#ff0';for(let m of [WORKING_MODEL,...MODELS]){s.textContent='Trying '+m+'...';let r=await tryModel(k,m);if(r.ok){WORKING_MODEL=m;localStorage.setItem('zeta_v44_model',m);s.textContent='✓ WORKING! '+m; s.style.color='#0f0';document.getElementById('modelStatus').textContent=m+' ACTIVE + Earning ON';btn.textContent='✓ Active';document.getElementById('chatBox').innerHTML+=`<div class="msg ai" style="border-color:#0f0">✅ FIXED! ${m} - Ab chat karo!</div>`;return;}if(r.fatal){s.textContent='✗ '+r.msg;s.style.color='#f55';return;}}s.textContent='✗ Fail - API enable karo';s.style.color='#f55';}
+async function callGemini(p){let sys='You are Zeta AI, helpful.';let full=sys+'\nUser:'+p;for(let m of [WORKING_MODEL,...MODELS]){try{let r=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${m}:generateContent`,{method:'POST',headers:{'Content-Type':'application/json','x-goog-api-key':GEMINI_KEY},body:JSON.stringify({contents:[{parts:[{text:full}]}],generationConfig:{temperature:0.8,maxOutputTokens:2000}})});let d=await r.json();if(d.candidates){WORKING_MODEL=m;localStorage.setItem('zeta_v44_model',m);return d.candidates[0].content.parts[0].text;}if(d.error&&d.error.message.includes('not found'))continue;if(d.error){let r2=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${m}:generateContent?key=${GEMINI_KEY}`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:[{parts:[{text:full}]}],generationConfig:{temperature:0.8,maxOutputTokens:2000}})});let d2=await r2.json();if(d2.candidates)return d2.candidates[0].content.parts[0].text;if(d2.error&&d2.error.message.includes('not found'))continue;throw new Error(d.error.message);}}catch(e){if(e.message.includes('not found'))continue;try{let r2=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${m}:generateContent?key=${GEMINI_KEY}`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:[{parts:[{text:full}]}],generationConfig:{temperature:0.8,maxOutputTokens:2000}})});let d2=await r2.json();if(d2.candidates)return d2.candidates[0].content.parts[0].text;throw new Error(d2.error?d2.error.message:e.message);}catch(e2){if(e2.message.includes('not found'))continue;throw e2;}}}throw new Error('API enable karo console.cloud.google.com se');}
+async function sendChat(){let i=document.getElementById('userInput');let t=i.value.trim();if(!t)return;let b=document.getElementById('chatBox');b.innerHTML+=`<div class="msg user">${t}</div>`;i.value='';let a=document.createElement('div');a.className='msg ai';a.textContent='...';b.appendChild(a);document.getElementById('content').scrollTop=99999;try{let ans=await callGemini(t);a.innerHTML=ans.replace(/</g,'&lt;').replace(/\n/g,'<br>');}catch(e){a.innerHTML='❌ '+e.message;}document.getElementById('content').scrollTop=99999;}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js');}
+window.onload=()=>{if(GEMINI_KEY.length>20)saveAndTest();};
+</script>
+</body>
+</html>
